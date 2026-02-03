@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>この授業、実際どう？</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form, .controls, .class-group {
+      background: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    input, select, textarea {
+      width: 100%;
+      margin-bottom: 8px;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 8px;
+      background: #333;
+      color: #fff;
+    }
+    .tag {
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      margin-left: 6px;
+    }
+    .easy { background: #e0f2f1; }
+    .normal { background: #fff8e1; }
+    .hard { background: #ffebee; }
+    .comment {
+      font-size: 14px;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>この授業、実際どう？</h1>
+  <h2>※教員名・個人名は絶対に記入しないでください。</h2>
+<div class="form">
+  <input id="university" placeholder="大学名">
+  <input id="faculty" placeholder="学部">
+  <input id="className" placeholder="授業名">
+  <select id="easy">
+    <option value="1">楽単度 ★</option>
+    <option value="2">楽単度 ★★</option>
+    <option value="3">楽単度  ★★★</option>
+    <option value="4">楽単度  ★★★★</option>
+    <option value="5">楽単度  ★★★★★</option>
+  </select>
+  <select id="report">
+    <option value="1">レポート量 ★</option>
+    <option value="2">レポート量 ★★</option>
+    <option value="3">レポート量 ★★★</option>
+    <option value="4">レポート量 ★★★★</option>
+    <option value="5">レポート量 ★★★★★</option>
+  </select>
+  <select id="attendance">
+    <option value="1">出席 ★</option>
+    <option value="2">出席 ★★</option>
+    <option value="3">出席 ★★★</option>
+    <option value="4">出席 ★★★★</option>
+    <option value="5">出席 ★★★★★</option>
+  </select>
+  <textarea id="comment" placeholder="ひとことコメント"></textarea>
+  <button onclick="addReview()">投稿する</button>
+</div>
+
+<div class="controls">
+  <input id="search" placeholder="授業名・大学名で検索" oninput="renderAll()">
+  <select id="sort" onchange="renderAll()">
+    <option value="default">並び替え</option>
+    <option value="easy">楽単順</option>
+    <option value="hard">鬼単順</option>
+  </select>
+</div>
+
+<div id="reviews"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
